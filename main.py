@@ -103,10 +103,10 @@ while run:
                     topIndex = 0
         if event.type == pygame.MOUSEBUTTONDOWN:
             if topleftArrowButton.collidepoint(event.pos):
-                if topIndex <= len(lstTop) and topIndex != 0:
+                if topIndex < len(lstTop) and topIndex != 0:
                     topIndex = topIndex - 1
-                elif topIndex == lstTop[0]:
-                    topIndex = lstTop[len(lstTop) - 1]
+                elif topIndex == 0:
+                    topIndex = len(lstTop) - 1
         if event.type == pygame.MOUSEBUTTONDOWN:
             if bottomRightArrowButton.collidepoint(event.pos):
                 if botIndex >= lstBot[0] and botIndex < len(lstBot) - 1:
@@ -115,10 +115,10 @@ while run:
                     botIndex = 0
         if event.type == pygame.MOUSEBUTTONDOWN:
             if bottomleftArrowButton.collidepoint(event.pos):
-                if botIndex <= len(lstBot) and botIndex != lstBot[0]:
+                if botIndex < len(lstBot) and botIndex != 0:
                     botIndex = botIndex - 1
-                elif botIndex == lstBot[0]:
-                    botIndex = lstBot[len(lstBot) - 1]
+                elif botIndex == 0:
+                    botIndex = len(lstBot) - 1
         if event.type == pygame.MOUSEBUTTONDOWN:
             if shufleButton.collidepoint(event.pos):
                 randIndex = random.randint(0, len(lstTop)-1)
