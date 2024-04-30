@@ -77,7 +77,7 @@ while run:
     #load images
     pathNum = str(topIndex)
     twoDIndexNum = str(twoDIndex)
-    if topIndex != 0: 
+    if type(lstTop[topIndex]) == int: 
         top = pygame.image.load("asset/top/" + pathNum + ".png")
         top2 = pygame.transform.scale_by(top, 3) 
     else:
